@@ -1,2 +1,3 @@
 # Coursera-DataStructuresAlgorithms
-Problems of Coursera Data Structures and Algorithms specialization and their solutions in cpp or python3
+Problems of Coursera Data Structures and Algorithms Specialization and their solutions in cpp or python3.
+Anyone is free to contribute better solutions and fixes. 
