@@ -11,7 +11,14 @@ def build_suffix_array(text):
   suffix of text starts.
   """
   result = []
+  n = len(text)
+  sarray = [None] * n
+  for i in range(len(text)):
+    sarray[i] = (text[i: n], i)
+  sarray = sorted(sarray)
   # Implement this function yourself
+  for array in sarray:
+    result.append(array[1])
   return result
 
 
