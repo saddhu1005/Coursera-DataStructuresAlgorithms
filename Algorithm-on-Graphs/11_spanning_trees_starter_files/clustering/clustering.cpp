@@ -8,10 +8,8 @@
 using std::vector;
 using std::pair;
 
-
-
 double clustering(vector<int> x, vector<int> y, int k) {
-  //write your code here
+  //write your codes here
   return -1.;
 } 
 

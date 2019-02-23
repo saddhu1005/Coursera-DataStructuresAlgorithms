@@ -10,9 +10,10 @@ struct data{
     list<string> s;
     
 };
+
 class QueryProcessor {
     ll bucket_count;
-    // store all strings in one vector
+    // storing all strings in one vector
     vector<data> elems;
     size_t hash_func(const string& s) const {
         static const size_t multiplier = 263;
