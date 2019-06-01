@@ -61,6 +61,39 @@ def read_data():
 def max_flow(graph, from_, to):
     flow = 0
     # your code goes here
+    while True:
+        # print('stps')
+        q = []
+        q.append(from_)
+        visited = [False] * graph.size()
+        minedge = 10 ** 5
+        parent = [(None, None)] * graph.size()
+        parent[from_] = (from_, -1)
+        visited[from_] = True
+        path_found = False
+        while q and not path_found:
+            s = q.pop(0)
+            ids = graph.get_ids(s)
+            for id in ids:
+                edge = graph.get_edge(id)
+                if not visited[edge.v] and edge.flow<edge.capacity:
+                    visited[edge.v] = True
+                    parent[edge.v] = (edge.u, id)
+                    q.append(edge.v)
+                    minedge = min(minedge, edge.capacity-edge.flow)
+                    if edge.v == to:
+                        path_found = True
+                        break
+        if not path_found:
+            break
+        s = to
+        u, id = parent[s]
+        while s is not from_:
+            graph.add_flow(id, minedge)
+            s = u
+            u, id = parent[s]
+        flow += minedge
+    
     return flow
 
 
