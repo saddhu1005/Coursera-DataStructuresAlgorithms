@@ -8,20 +8,20 @@ class Node:
 		self.next = [NA] * 4
 def trie(patterns,n):
 	tree = dict()
-	keys=1
+	keys = 1
 	for pattern in patterns:
-		node=0
+		node = 0
 		pattern += '$'
 		for c in pattern:
 			if node in tree:
 				if c in tree[node]:
-					node=tree[node][c]
+					node = tree[node][c]
 				else:
-					tree[node].update({c:keys})
+					tree[node].update({c: keys})
 					node = keys
 					keys += 1
 			else:
-				tree[node]={c:keys}
+				tree[node] = {c: keys}
 				node = keys
 				keys += 1
 	return tree
@@ -47,7 +47,6 @@ def solve (text, n, patterns):
 					node=tree[node][text[j]]
 				else:
 					break
-
 
 	return result
 
